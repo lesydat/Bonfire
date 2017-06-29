@@ -1,10 +1,10 @@
 <?php echo theme_view('header'); ?>
-<div class="container"><!-- Start of Main Container -->
-    <?php
-    echo theme_view('_sitenav');
-
-    echo Template::message();
-    echo isset($content) ? $content : Template::content();
-
-    echo theme_view('footer');
-    ?>
+<?php echo theme_view('_sitenav'); ?>
+<section id="main">
+	<section id="content" class="content-alt">
+		<div class="container">
+<?php echo isset($content) ? $content : Template::content(); ?>
+		</div>
+	</section>
+</section>
+<?php echo theme_view('footer'); ?>

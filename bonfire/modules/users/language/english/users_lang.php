@@ -94,9 +94,9 @@ $lang['us_reset_note']				= 'Enter your email and we will send a temporary passw
 $lang['us_send_password']			= 'Send Password';
 
 $lang['us_login']					= 'Please sign in';
-$lang['us_remember_note']			= 'Remember me';
-$lang['us_sign_up']					= 'Create An Account';
-$lang['us_forgot_your_password']	= 'Forgot Your Password?';
+$lang['us_remember_note']			= 'Keep me signed in';
+$lang['us_sign_up']					= 'Register';
+$lang['us_forgot_your_password']	= 'Forgot Password';
 $lang['us_let_me_in']				= 'Sign In';
 
 $lang['us_password_mins']			= 'Minimum 8 characters.';
@@ -206,7 +206,7 @@ $lang['us_tab_roles']				= 'By Role';
 
 $lang['us_forced_password_reset_note']	= 'Due to security reasons, you must choose a new password for your account.';
 
-$lang['us_back_to']					= 'Back to ';
+$lang['us_back_to']					= 'Back to Home';
 $lang['us_no_account']              = 'No account?';
 $lang['us_force_password_reset']    = 'Force password reset on next login';
 
