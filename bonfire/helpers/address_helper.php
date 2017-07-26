@@ -54,8 +54,8 @@ if (! function_exists('country_select')) {
 
         // Setup the opening select tag
         $output = "<select name='{$selectName}' id='{$selectName}'";
-        if (! empty($classValue) && is_string($classValue)) {
-            $output .= " class='{$classValue}'";
+        if (is_string($classValue)) {
+            $output .= " class='form-control chosen {$classValue}'";
         }
         $output .= ">\n";
 
@@ -107,8 +107,8 @@ if (! function_exists('state_select')) {
 
         // Setup the opening select tag
         $output = "<select name='{$selectName}' id='{$selectName}'";
-        if (is_string($classValue) && ! empty($classValue)) {
-            $output .= " class='{$classValue}'";
+        if (is_string($classValue)) {
+            $output .= " class='form-control chosen {$classValue}'";
         }
         $output .= ">\n";
 

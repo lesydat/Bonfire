@@ -54,6 +54,7 @@ if (! function_exists('_form_common')) {
             'name'  => (is_array($data) ? '' : $data),
             'type'  => $type,
             'value' => $value,
+			'class' => 'form-control',
         );
 
         // If name is empty at this point, try to grab it from $data
@@ -87,19 +88,19 @@ if (! function_exists('_form_common')) {
 
         $error = '';
         if (function_exists('form_error') && form_error($defaults['name'])) {
-            $error   = ' error';
-            $tooltip = '<span class="help-inline">' . form_error($defaults['name']) . '</span>';
+            $error   = ' has-error';
+            $tooltip = '<small class="help-block">' . form_error($defaults['name']) . '</small>';
         }
 
         $output = _parse_form_attributes($data, $defaults);
 
         return "
-<div class='control-group{$error}'>
-    <label class='control-label' for='{$defaults['id']}'>{$label}</label>
-    <div class='controls'>
-         <input {$output} {$extra} />
-        {$tooltip}
+<div class='form-group fg-float{$error}'>
+    <div class='fg-line'>
+    	<label class='fg-label' for='{$defaults['id']}'>{$label}</label>
+        <input {$output} {$extra} />
     </div>
+    {$tooltip}
 </div>";
     }
 }
@@ -367,7 +368,7 @@ if (! function_exists('form_dropdown')) {
             $data['id'] = $data['name'];
         }
 
-        $output = _parse_form_attributes($data, array());
+        $output = _parse_form_attributes($data, array('class' => 'form-control chosen'));
 
         if (! is_array($selected)) {
             $selected = array($selected);
@@ -400,19 +401,19 @@ if (! function_exists('form_dropdown')) {
 
         $error = '';
         if (function_exists('form_error') && form_error($data['name'])) {
-            $error   = ' error';
+            $error   = ' has-error';
             $tooltip = '<span class="help-inline">' . form_error($data['name']) . '</span>';
         }
 
         return "
-<div class='control-group{$error}'>
-    <label class='control-label' for='{$data['id']}'>{$label}</label>
-    <div class='controls'>
+<div class='form-group fg-float{$error}'>
+    <div class='fg-line'>
+    	<label class='fg-label' for='{$data['id']}'>{$label}</label>
         <select {$output} {$extra}>
             {$options_vals}
         </select>
-        {$tooltip}
     </div>
+    {$tooltip}
 </div>";
     }
 }

@@ -1,3 +1,4 @@
+/* Apply global */
 .alert-error {
 	background-color: #F44336;
 	color: #fff;
@@ -5,6 +6,32 @@
 .notification {
 	display: none;
 }
+.has-success .input-group-addon, .has-warning .input-group-addonl, .has-error .input-group-addon{
+	background-color: white;
+}
+.fg-float.has-success .fg-label {
+	color: #67bd6a;
+}
+.fg-float.has-warning .fg-label {
+	color: #ffa829;
+}
+.fg-float.has-error .fg-label {
+	color: #f6675d;
+}
+.fg-label.required::after {
+	content: " *";
+	color: #f33a2c;
+	/*font-weight: bold;*/
+}
+.fg-line:not([class*=has-]).fg-toggled .fg-label {
+	color: #2196F3;
+}
+.fg-float .fg-inputted .fg-label {
+	top: -20px;
+	font-size: 11px;
+}
+
+/* Home page only */
 @media (min-width: 1280px) {
 	#footer.footer-alt {
 		padding-left: 0;

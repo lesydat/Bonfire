@@ -258,7 +258,7 @@ class Users extends Front_Controller
         Template::set_view('users/register');
         Template::set('languages', unserialize($this->settings_lib->item('site.languages')));
         Template::set('page_title', 'Register');
-        Template::render();
+        Template::render('login');
     }
 
     // -------------------------------------------------------------------------

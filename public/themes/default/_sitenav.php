@@ -1,7 +1,7 @@
 <header id="header" class="clearfix" data-ma-theme="blue">
 	<ul class="h-inner">
 		<li class="hi-logo">
-			<a href="index.html"><?php e(class_exists('Settings_lib') ? settings_item('site.title') : 'Bonfire'); ?></a>
+			<a href="<?php echo site_url(); ?>"><?php e(class_exists('Settings_lib') ? settings_item('site.title') : 'Bonfire'); ?></a>
 		</li>
 		<li class="pull-right">
 			<ul class="hi-menu">

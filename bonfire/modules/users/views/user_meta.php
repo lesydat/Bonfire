@@ -33,9 +33,9 @@ if (! empty($meta_fields)) :
             );
         elseif ($field['form_detail']['type'] == 'checkbox') :
 ?>
-<div class="control-group<?php echo form_error($field['name']) ? ' error' : ''; ?>">
-    <label class="control-label" for="<?php echo $field['name']; ?>"><?php echo $field['label']; ?></label>
-    <div class="controls">
+<div class="form-group fg-float<?php echo form_error($field['name']) ? ' has-error' : ''; ?>">
+    <div class="fg-line">
+    	<label class="fg-label"><?php echo $field['label']; ?></label>
         <?php
         echo form_checkbox(
             $field['form_detail']['settings'],
@@ -55,16 +55,16 @@ if (! empty($meta_fields)) :
             $stateFieldId = $field['name'];
             $stateValue = isset($user->{$field['name']}) ? $user->{$field['name']} : $defaultState;
 ?>
-<div class="control-group<?php echo form_error($field['name']) ? ' error' : ''; ?>">
-    <label class="control-label" for="<?php echo $field['name']; ?>"><?php echo lang('user_meta_state'); ?></label>
-    <div class="controls">
+<div class="form-group fg-float<?php echo form_error($field['name']) ? ' has-error' : ''; ?>">
+    <div class="fg-line">
+    	<label class="fg-label"><?php echo lang('user_meta_state'); ?></label>
         <?php
         echo state_select(
             set_value($field['name'], $stateValue),
             $defaultState,
             $defaultCountry,
             $field['name'],
-            'span6 chzn-select'
+            ''
         );
         ?>
     </div>
@@ -76,15 +76,15 @@ if (! empty($meta_fields)) :
             $countryFieldId = $field['name'];
             $countryValue = isset($user->{$field['name']}) ? $user->{$field['name']} : $defaultCountry;
 ?>
-<div class="control-group<?php echo form_error($field['name']) ? ' error' : ''; ?>">
-    <label class="control-label" for="<?php echo $field['name']; ?>"><?php echo lang('user_meta_country'); ?></label>
-    <div class="controls">
+<div class="form-group fg-float<?php echo form_error($field['name']) ? ' has-error' : ''; ?>">
+    <div class="fg-line">
+    	<label class="fg-label"><?php echo lang('user_meta_country'); ?></label>
         <?php
         echo country_select(
             set_value($field['name'], isset($user->{$field['name']}) ? $user->{$field['name']} : $defaultCountry),
             $defaultCountry,
             $field['name'],
-            'span6 chzn-select'
+            ''
         );
         ?>
     </div>

@@ -22,7 +22,7 @@ var addressStates = <?php echo json_encode(config_item('address.states')); ?>,
             options = '<option value="-"><?php echo lang('bf_select_no_state')?></option>';
         }
 
-        $('#<?php echo $state_name; ?>').html(options);
+		$('#<?php echo $state_name; ?>').html(options).trigger("chosen:updated");
     };
 
 $(countrySelect).change(setStates);

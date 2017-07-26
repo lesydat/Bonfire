@@ -5,6 +5,8 @@ Assets::add_css([
 	'vendors/bower_components/animate.css/animate.min.css',
 	'vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css',
 	'vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css',
+	'vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css',
+	'vendors/bower_components/chosen/chosen.css',
 	'app_1.min.css', 
 	'app_2.min.css',
 ]);
@@ -15,6 +17,8 @@ Assets::add_js([
 	'vendors/bower_components/Waves/dist/waves.min.js',
 	'vendors/bootstrap-growl/bootstrap-growl.min.js',
 	'vendors/bower_components/sweetalert2/dist/sweetalert2.min.js',
+	'vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js',
+	'vendors/bower_components/chosen/chosen.jquery.js',
 	'app.min.js',
 ]);
 

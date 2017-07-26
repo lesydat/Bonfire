@@ -38,6 +38,17 @@ $(function() {
 	$('.notification').each(function(i) {
 		notify($(this).html(), $(this).data('notification-type') ? $(this).data('notification-type') : 'info');
 	});
+
+	// Focus mode for Chosen
+	$('.chosen').chosen().each(function(idx) {
+		var element_id = $(this).attr('id') + '_chosen';
+		$('div#' + element_id + ' input').focus(function () {
+			$('div#' + element_id).parent().addClass('fg-toggled');
+		});
+		$('div#' + element_id + ' input').blur(function () {
+			$('div#' + element_id).parent().removeClass('fg-toggled');
+		});
+	});
 });
 
 // Store & set theme color by localstorage
@@ -45,7 +56,7 @@ $(function() {
 if (typeof(Storage) !== "undefined") {
 	if (localStorage.getItem("theme_color")) {
 		// Set theme color
-		document.querySelectorAll('[data-ma-theme]')[0].setAttribute("data-ma-theme", localStorage.getItem("theme_color"));
+		if (document.querySelectorAll('[data-ma-theme]').length > 0) document.querySelectorAll('[data-ma-theme]')[0].setAttribute("data-ma-theme", localStorage.getItem("theme_color"));
 	} else {
 		// Set default theme to blue
 		localStorage.setItem("theme_color", "blue");
