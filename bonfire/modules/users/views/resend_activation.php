@@ -1,36 +1,19 @@
-<div class="page-header">
-	<h1><?php echo lang('us_activate_resend'); ?></h1>
-</div>
-
-<?php if (validation_errors()) { ?>
-	<div class="alert alert-error fade in">
-		<?php echo validation_errors(); ?>
-	</div>
-<?php } else { ?>
-
-	<div class="well shallow-well">
-		<?php echo lang('us_activate_resend_note'); ?>
-	</div>
-<?php } ?>
-<div class="row-fluid">
-	<div class="span8 offset2">
-
-<?php echo form_open($this->uri->uri_string(), array('class' => "form-horizontal", 'autocomplete' => 'off')); ?>
-
-	<div class="control-group <?php echo iif( form_error('email') , 'error') ;?>">
-		<label class="control-label required" for="email"><?php echo lang('bf_email'); ?></label>
-		<div class="controls">
-			<input class="span6" type="text" name="email" id="email" value="<?php echo set_value('email') ?>" />
+<div class="row">
+	<div class="col-md-3 col-sm-2"></div>
+	<div class="col-md-6 col-sm-8">
+		<div class="card">
+			<?php echo form_open($this->uri->uri_string(), array('autocomplete' => 'off')); ?>
+				<div class="card-header bgm-blue">
+					<h2>
+						<?php echo lang('us_activate_resend'); ?>
+						<small><?php echo lang('us_activate_resend_note'); ?></small>
+					</h2>
+				</div>
+				<div class="card-body card-padding">
+					<?php echo form_input('email', set_value('email'), lang('bf_email')); ?>
+					<button type="submit" class="btn btn-primary btn-block waves-effect"><?php echo lang('us_activate_code_send') ?></button> 
+				</div>
+			<?php echo form_close(); ?>
 		</div>
-	</div>
-
-	<div class="control-group">
-		<div class="controls">
-			<input class="btn btn-primary" type="submit" name="send" value="<?php echo lang('us_activate_code_send') ?>"  />
-		</div>
-	</div>
-
-<?php echo form_close(); ?>
-
 	</div>
 </div>

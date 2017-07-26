@@ -278,8 +278,7 @@ class Users extends Front_Controller
         if ($this->auth->is_logged_in() !== false) {
             Template::redirect('/');
         }
-
-        if (isset($_POST['send'])) {
+        if (isset($_POST)) {
             // Validate the form to ensure a valid email was entered.
             $this->form_validation->set_rules('email', 'lang:bf_email', 'required|trim|valid_email');
             if ($this->form_validation->run() !== false) {
@@ -313,7 +312,7 @@ class Users extends Front_Controller
                             array('link' => $pass_link),
                             true
                         ),
-                     );
+                    );
 
                     if ($this->emailer->send($data)) {
                         Template::set_message(lang('us_reset_pass_message'), 'success');
@@ -321,7 +320,9 @@ class Users extends Front_Controller
                         Template::set_message(lang('us_reset_pass_error') . $this->emailer->error, 'error');
                     }
                 }
-            }
+            } else {
+				Template::set_message(validation_errors(), 'error');
+			}
         }
 
         Template::set_view('users/forgot_password');
@@ -438,7 +439,7 @@ class Users extends Front_Controller
      */
     public function activate($user_id = null)
     {
-        if (isset($_POST['activate'])) {
+        if (isset($_POST)) {
             $this->form_validation->set_rules('code', 'Verification Code', 'required|trim');
             if ($this->form_validation->run()) {
                 $code = $this->input->post('code');
@@ -470,6 +471,8 @@ class Users extends Front_Controller
                 if (! empty($this->user_model->error)) {
                     Template::set_message($this->user_model->error . '. ' . lang('us_err_activate_code'), 'error');
                 }
+			} else {
+				Template::set_message(validation_errors(), 'error');
             }
         }
 
@@ -486,7 +489,7 @@ class Users extends Front_Controller
      */
     public function resend_activation()
     {
-        if (isset($_POST['send'])) {
+        if (isset($_POST)) {
             $this->form_validation->set_rules('email', 'lang:bf_email', 'required|trim|valid_email');
 
             if ($this->form_validation->run()) {
@@ -501,6 +504,8 @@ class Users extends Front_Controller
 
                     Template::set_message($message, $error ? 'error' : 'success');
                 }
+			} else {
+				Template::set_message(validation_errors(), 'error');
             }
         }
 

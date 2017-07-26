@@ -56,3 +56,6 @@
 		</li>
 	</ul>
 </header>
+<script type="text/javascript">
+	var notification_y_offset = 85;
+</script>

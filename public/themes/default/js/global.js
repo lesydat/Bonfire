@@ -1,4 +1,4 @@
-function notify(message, type)
+function notify(message, type, y_offset = 20)
 {
 	$.growl({
 		message: message,
@@ -9,7 +9,7 @@ function notify(message, type)
 		allow_dismiss: true,
 		offset: {
 			x: 20,
-			y: 20
+			y: y_offset,
 		},
 		spacing: 10,
 		z_index: 1031,
@@ -36,7 +36,10 @@ function notify(message, type)
 $(function() {
 	// Show Template::message() as Notification
 	$('.notification').each(function(i) {
-		notify($(this).html(), $(this).data('notification-type') ? $(this).data('notification-type') : 'info');
+		if (typeof notification_y_offset != 'undefined')
+			notify($(this).html(), $(this).data('notification-type') ? $(this).data('notification-type') : 'info', notification_y_offset);
+		else 
+			notify($(this).html(), $(this).data('notification-type') ? $(this).data('notification-type') : 'info');
 	});
 
 	// Focus mode for Chosen
