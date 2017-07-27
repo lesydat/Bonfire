@@ -11,7 +11,7 @@
 				</div>
 				<div class="card-body card-padding">
 					<?php echo form_input('code', set_value('code'), lang('us_activate_code')); ?>
-					<button type="submit" class="btn btn-primary btn-block waves-effect"><?php echo lang('us_confirm_activate_code') ?></button> 
+					<button type="submit" class="btn btn-primary btn-block waves-effect"><?php echo lang('us_confirm_activate_code') ?></button>
 				</div>
 			<?php echo form_close(); ?>
 		</div>

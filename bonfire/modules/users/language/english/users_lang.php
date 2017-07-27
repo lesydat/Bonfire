@@ -211,3 +211,5 @@ $lang['us_no_account']              = 'No account?';
 $lang['us_force_password_reset']    = 'Force password reset on next login';
 
 $lang['users_act_invalid_login_attempt'] = 'Invalid login attempt from IP %s for user %s, reason: %s';
+
+$lang['us_reset_password_title']	= 'Reset Your Password';

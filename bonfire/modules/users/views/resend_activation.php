@@ -11,7 +11,7 @@
 				</div>
 				<div class="card-body card-padding">
 					<?php echo form_input('email', set_value('email'), lang('bf_email')); ?>
-					<button type="submit" class="btn btn-primary btn-block waves-effect"><?php echo lang('us_activate_code_send') ?></button> 
+					<button type="submit" class="btn btn-primary btn-block waves-effect"><?php echo lang('us_activate_code_send') ?></button>
 				</div>
 			<?php echo form_close(); ?>
 		</div>

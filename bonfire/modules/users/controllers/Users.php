@@ -154,7 +154,7 @@ class Users extends Front_Controller
 
         Template::set('meta_fields', $meta_fields);
 
-        if (isset($_POST['save'])) {
+        if ($this->input->post()) {
             $user_id = $this->current_user->id;
             if ($this->saveUser('update', $user_id, $meta_fields)) {
                 $user = $this->user_model->find($user_id);
@@ -278,7 +278,7 @@ class Users extends Front_Controller
         if ($this->auth->is_logged_in() !== false) {
             Template::redirect('/');
         }
-        if (isset($_POST)) {
+        if ($this->input->post()) {
             // Validate the form to ensure a valid email was entered.
             $this->form_validation->set_rules('email', 'lang:bf_email', 'required|trim|valid_email');
             if ($this->form_validation->run() !== false) {
@@ -367,7 +367,7 @@ class Users extends Front_Controller
         }
 
             // Handle the form
-        if (isset($_POST['set_password'])) {
+        if ($this->input->post()) {
                 $this->form_validation->set_rules('password', 'lang:bf_password', 'required|max_length[120]|valid_password');
                 $this->form_validation->set_rules('pass_confirm', 'lang:bf_password_confirm', 'required|matches[password]');
 
@@ -375,8 +375,8 @@ class Users extends Front_Controller
                 // The user model will create the password hash.
                 $data = array(
                     'password'   => $this->input->post('password'),
-                                  'reset_by'    => 0,
-                                  'reset_hash'  => '',
+                    'reset_by'    => 0,
+                    'reset_hash'  => '',
                     'force_password_reset' => 0,
                 );
 
@@ -390,7 +390,9 @@ class Users extends Front_Controller
                 if (! empty($this->user_model->error)) {
                     Template::set_message(sprintf(lang('us_reset_password_error'), $this->user_model->error), 'error');
                 }
-            }
+            } else {
+				Template::set_message(validation_errors(), 'error');
+			}
         }
 
         // Check the code against the database
@@ -439,7 +441,7 @@ class Users extends Front_Controller
      */
     public function activate($user_id = null)
     {
-        if (isset($_POST)) {
+        if ($this->input->post()) {
             $this->form_validation->set_rules('code', 'Verification Code', 'required|trim');
             if ($this->form_validation->run()) {
                 $code = $this->input->post('code');
@@ -489,7 +491,7 @@ class Users extends Front_Controller
      */
     public function resend_activation()
     {
-        if (isset($_POST)) {
+        if ($this->input->post()) {
             $this->form_validation->set_rules('email', 'lang:bf_email', 'required|trim|valid_email');
 
             if ($this->form_validation->run()) {
@@ -586,6 +588,7 @@ class Users extends Front_Controller
         Events::trigger('before_user_validation', $payload);
 
         if ($this->form_validation->run() === false) {
+			Template::set_message(validation_errors(), 'error');
             return false;
         }
 
