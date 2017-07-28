@@ -227,6 +227,8 @@ class Users extends Front_Controller
         $meta_fields = config_item('user_meta_fields');
         Template::set('meta_fields', $meta_fields);
 
+		Template::set_message(lang('bf_required_note'));
+
         if (isset($_POST['register'])) {
             if ($userId = $this->saveUser('insert', 0, $meta_fields)) {
                 // User Activation

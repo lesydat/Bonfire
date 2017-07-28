@@ -16,14 +16,14 @@ $fieldData = array(
 }
 </style>
 <!-- Register -->
-<div class="notification" data-notification-type="info">
+<!-- <div class="notification" data-notification-type="info">
 	<strong><?php echo lang('bf_required_note'); ?></strong>
 <?php
 if (isset($password_hints)) {
 	echo '<br/>' . $password_hints;
 }
 ?>
-</div>
+</div> -->
 <div class="lc-block toggled" id="l-register">
 	<?php echo form_open(site_url(REGISTER_URL), array('autocomplete' => 'off')); ?>
 	<div class="lcb-form" <?php echo $useIconsInsteadLabel ? '' : 'style="text-align: left;"'; ?>>
