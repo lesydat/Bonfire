@@ -63,8 +63,7 @@ $defaultTimezone = isset($user->timezone) ? $user->timezone : strtoupper(setting
 <?php } ?>
         <input class="<?php echo $controlClass; ?>" type="password" id="password" name="password" value="" <?php echo $useIconsInsteadLabel ? 'placeholder="' . lang('bf_password') . '"' : ''; ?>/>
     </div>
-	<small class="help-block"><?php echo form_error('password'); ?></small>
-	<small class="help-block"><?php echo isset($password_hints) ? $password_hints : ''; ?></small>
+	<small class="help-block"><?php echo ! empty(form_error('password')) ? form_error('password') : (isset($password_hints) ? $password_hints : ''); ?></small>
 </div>
 
 <div class="<?php echo ($useIconsInsteadLabel ? 'input-group m-b-20' : 'form-group fg-float') . (form_error('pass_confirm') ? $errorClass : ''); ?>">

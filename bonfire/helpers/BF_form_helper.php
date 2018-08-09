@@ -90,6 +90,8 @@ if (! function_exists('_form_common')) {
         if (function_exists('form_error') && form_error($defaults['name'])) {
             $error   = ' has-error';
             $tooltip = '<small class="help-block">' . form_error($defaults['name']) . '</small>';
+        } elseif (! empty($tooltip)) {
+            $tooltip = '<small class="help-block">' . $tooltip . '</small>';
         }
 
         $output = _parse_form_attributes($data, $defaults);
@@ -402,7 +404,9 @@ if (! function_exists('form_dropdown')) {
         $error = '';
         if (function_exists('form_error') && form_error($data['name'])) {
             $error   = ' has-error';
-            $tooltip = '<span class="help-inline">' . form_error($data['name']) . '</span>';
+            $tooltip = '<small class="help-block">' . form_error($data['name']) . '</small>';
+        } elseif (! empty($tooltip)) {
+            $tooltip = '<small class="help-block">' . $tooltip . '</small>';
         }
 
         return "

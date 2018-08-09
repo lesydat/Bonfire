@@ -45,6 +45,15 @@
 			<p>Sorry for the inconvenience!</p>
 		</div>
 	<![endif]-->
+	<!-- Page Loader -->
+	<div class="page-loader">
+		<div class="preloader pls-blue">
+			<svg class="pl-circular" viewBox="25 25 50 50">
+				<circle class="plc-path" cx="50" cy="50" r="20" />
+			</svg>
+			<p>Please wait...</p>
+		</div>
+	</div>
 	<div id="debug"><!-- Stores the Profiler Results --></div>
 	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

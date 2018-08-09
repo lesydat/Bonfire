@@ -13,7 +13,7 @@ function notify(message, type, y_offset = 20)
 		},
 		spacing: 10,
 		z_index: 1031,
-		delay: 2500,
+		delay: 5000,
 		timer: 1000,
 		url_target: '_blank',
 		mouse_over: false,
@@ -64,4 +64,25 @@ if (typeof(Storage) !== "undefined") {
 		// Set default theme to blue
 		localStorage.setItem("theme_color", "blue");
 	}
+}
+
+// get Browser timezone
+function getTimezone()
+{
+	let offset = new Date().getTimezoneOffset();
+	let timezone = 'U';
+	if (offset < 0) {
+		timezone += 'P';
+	} else if (offset > 0) {
+		timezone += 'M';
+	} else {
+		timezone += 'TC';
+	}
+
+	if (offset !=0) {
+		let hrs = -(offset / 60);
+		let hrs_str = hrs.toString().replace('.', '');
+		timezone += hrs_str;
+	}
+	return timezone;
 }
