@@ -53,7 +53,7 @@ echo form_open($this->uri->uri_string(), array('class' => 'form-horizontal', 'au
 ?>
     <fieldset>
         <legend><?php echo lang('us_account_details'); ?></legend>
-        <?php Template::block('user_fields', 'user_fields', $fieldData); ?>
+        <?php Template::block('user_fields', 'settings/user_fields', $fieldData); ?>
     </fieldset>
     <?php
     $canManageUser = false;
@@ -98,7 +98,7 @@ echo form_open($this->uri->uri_string(), array('class' => 'form-horizontal', 'au
         Events::trigger('render_user_form', $renderPayload);
         ?>
         <!-- Start of User Meta -->
-        <?php $this->load->view('users/user_meta');?>
+        <?php $this->load->view('users/settings/user_meta');?>
         <!-- End of User Meta -->
     </fieldset>
     <?php

@@ -144,7 +144,7 @@ $lang['bf_select_no_state'] 	= 'No State Available';
 $lang['bf_both']				= 'both';
 $lang['bf_go_back']				= 'Go Back';
 $lang['bf_new']					= 'New';
-$lang['bf_required_note']		= 'Required fields are in <b>bold</b>.';
+$lang['bf_required_note']		= 'Required fields have been marked with asterisk (*).';
 $lang['bf_form_label_required']	= '<span class="required">*</span>';
 
 //------------------------------------------------------------------------------

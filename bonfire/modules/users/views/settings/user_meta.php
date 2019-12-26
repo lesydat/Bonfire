@@ -9,8 +9,6 @@ if (! empty($meta_fields)) :
     $displayFrontend = isset($frontend_only) ? $frontend_only : false;
     $userIsAdmin     = isset($current_user) ? ($current_user->role_id == 1) : false;
 
-    $showLabel       = isset($showLabel) ? $showLabel : false;
-
     foreach ($meta_fields as $field) :
         $adminField = isset($field['admin_only']) ? $field['admin_only'] : false;
         // If this is an admin field and the user is not an admin, skip it.
@@ -35,20 +33,20 @@ if (! empty($meta_fields)) :
             );
         elseif ($field['form_detail']['type'] == 'checkbox') :
 ?>
-<div class="form-group<?php echo form_error($field['name']) ? ' error' : ''; ?>">
-    <?php if ($showLabel): ?>
-    <label for="<?php echo $field['name']; ?>"><?php echo $field['label']; ?></label>
-    <?php endif; ?>
-    <?php
-    echo form_checkbox(
-        $field['form_detail']['settings'],
-        $field['form_detail']['value'],
-        $field['form_detail']['value'] == set_value(
-            $field['name'],
-            isset($user->{$field['name']}) ? $user->{$field['name']} : ''
-        )
-    );
-    ?>
+<div class="control-group<?php echo form_error($field['name']) ? ' error' : ''; ?>">
+    <label class="control-label" for="<?php echo $field['name']; ?>"><?php echo $field['label']; ?></label>
+    <div class="controls">
+        <?php
+        echo form_checkbox(
+            $field['form_detail']['settings'],
+            $field['form_detail']['value'],
+            $field['form_detail']['value'] == set_value(
+                $field['name'],
+                isset($user->{$field['name']}) ? $user->{$field['name']} : ''
+            )
+        );
+        ?>
+    </div>
 </div>
 <?php
         elseif ($field['form_detail']['type'] == 'state_select'
@@ -57,19 +55,19 @@ if (! empty($meta_fields)) :
             $stateFieldId = $field['name'];
             $stateValue = isset($user->{$field['name']}) ? $user->{$field['name']} : $defaultState;
 ?>
-<div class="form-group<?php echo form_error($field['name']) ? ' error' : ''; ?>">
-    <?php if ($showLabel): ?>
-    <label for="<?php echo $field['name']; ?>"><?php echo lang('user_meta_state'); ?></label>
-    <?php endif; ?>
-    <?php
-    echo state_select(
-        set_value($field['name'], $stateValue),
-        $defaultState,
-        $defaultCountry,
-        $field['name'],
-        'form-control chzn-select'
-    );
-    ?>
+<div class="control-group<?php echo form_error($field['name']) ? ' error' : ''; ?>">
+    <label class="control-label" for="<?php echo $field['name']; ?>"><?php echo lang('user_meta_state'); ?></label>
+    <div class="controls">
+        <?php
+        echo state_select(
+            set_value($field['name'], $stateValue),
+            $defaultState,
+            $defaultCountry,
+            $field['name'],
+            'span6 chzn-select'
+        );
+        ?>
+    </div>
 </div>
 <?php
         elseif ($field['form_detail']['type'] == 'country_select'
@@ -78,17 +76,15 @@ if (! empty($meta_fields)) :
             $countryFieldId = $field['name'];
             $countryValue = isset($user->{$field['name']}) ? $user->{$field['name']} : $defaultCountry;
 ?>
-<div class="form-group<?php echo form_error($field['name']) ? ' error' : ''; ?>">
-    <?php if ($showLabel): ?>
-    <label for="<?php echo $field['name']; ?>"><?php echo lang('user_meta_country'); ?></label>
-    <?php endif; ?>
+<div class="control-group<?php echo form_error($field['name']) ? ' error' : ''; ?>">
+    <label class="control-label" for="<?php echo $field['name']; ?>"><?php echo lang('user_meta_country'); ?></label>
     <div class="controls">
         <?php
         echo country_select(
             set_value($field['name'], isset($user->{$field['name']}) ? $user->{$field['name']} : $defaultCountry),
             $defaultCountry,
             $field['name'],
-            'form-control chzn-select'
+            'span6 chzn-select'
         );
         ?>
     </div>

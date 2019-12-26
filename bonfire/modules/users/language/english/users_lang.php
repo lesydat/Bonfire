@@ -89,15 +89,17 @@ $lang['us_email_in_use']			= 'The %s address is already in use. Please choose an
 $lang['us_edit_profile']			= 'Edit Profile';
 $lang['us_edit_note']				= 'Enter your details below and click Save.';
 
-$lang['us_reset_password']			= 'Reset Password';
-$lang['us_reset_note']				= 'Enter your email and we will send a temporary password to you.';
-$lang['us_send_password']			= 'Send Password';
+$lang['us_forgot_password']			= 'Forgot your password?';
+$lang['us_forgot_password_note']	= 'Enter your email and we\'ll send you a reset link.';
+$lang['us_reset_password']			= 'Reset your password';
+$lang['us_send_password']			= 'Send reset link';
+$lang['back_to_login_page']			= 'Return to Login';
 
-$lang['us_login']					= 'Please sign in';
+$lang['us_login']					= 'Log in';
 $lang['us_remember_note']			= 'Remember me';
-$lang['us_sign_up']					= 'Create An Account';
-$lang['us_forgot_your_password']	= 'Forgot Your Password?';
-$lang['us_let_me_in']				= 'Sign In';
+$lang['us_sign_up']					= 'Create an Account';
+$lang['us_forgot_your_password']	= 'Forgot Password?';
+$lang['us_let_me_in']				= 'Log in';
 
 $lang['us_password_mins']			= 'Minimum 8 characters.';
 $lang['us_register']				= 'Register';
