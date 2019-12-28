@@ -11,7 +11,7 @@ $currentMethod = $this->router->method;
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item <?php echo $currentMethod == 'index' ? 'active' : ''; ?>">
+            <li class="nav-item<?php echo $this->uri->uri_string() == '' ? ' active' : ''; ?>">
                 <a class="nav-link" href="<?php echo site_url(); ?>"><?php e(lang('bf_home')); ?></a>
             </li>
             <?php if (empty($current_user)) : ?>
@@ -25,7 +25,7 @@ $currentMethod = $this->router->method;
                 </a>
                 <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="<?php echo site_url(SITE_AREA) ?>">Go to the Admin area</a>
-                    <a class="dropdown-item <?php echo $currentMethod == 'profile' ? 'active' : ''; ?>" href="<?php echo site_url('users/profile'); ?>"><?php e(lang('bf_user_settings')); ?></a>
+                    <a class="dropdown-item<?php echo $this->uri->uri_string() == 'users/profile' ? ' active' : ''; ?>" href="<?php echo site_url('users/profile'); ?>"><?php e(lang('bf_user_settings')); ?></a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="<?php echo site_url('logout'); ?>"><?php e(lang('bf_action_logout')); ?></a>
                 </div>
