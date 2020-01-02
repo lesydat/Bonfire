@@ -11,33 +11,27 @@
 	<br/><br/><a href="<?php echo site_url('/docs') ?>" class="btn btn-lg btn-outline-info">Browse the Docs</a>
 </div>
 
-<div class="row row-cols-3">
-	<div class="col mb-4">
-		<div class="card">
-			<div class="card-body card-padding">
-				<h5 class="card-title">A Solid Base</h5>
-				<p>Bonfire is based on <a href="http://ellislab.com/codeigniter" target="_blank">CodeIgniter <?php echo CI_VERSION; ?></a>, a proven PHP framework. In order to make the best use of it, you should be comfortable with CodeIgniter and its <a href="http://ellislab.com/codeigniter/user-guide/" target="_blank">documentation</a> first.</p>
-				<p>We use Twitter's <a href="">Bootstrap</a> front-end framework and <a href="http://jquery.com/">jQuery</a> as the basis of the CSS and Javascript.</p>
-			</div>
+<div class="card-deck">
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">A Solid Base</h5>
+			<p>Bonfire is based on <a href="http://ellislab.com/codeigniter" target="_blank">CodeIgniter <?php echo CI_VERSION; ?></a>, a proven PHP framework. In order to make the best use of it, you should be comfortable with CodeIgniter and its <a href="http://ellislab.com/codeigniter/user-guide/" target="_blank">documentation</a> first.</p>
+			<p>We use Twitter's <a href="">Bootstrap</a> front-end framework and <a href="http://jquery.com/">jQuery</a> as the basis of the CSS and Javascript.</p>
 		</div>
 	</div>
-	<div class="col mb-4">
-		<div class="card">
-			<div class="card-body card-padding">
-				<h5 class="card-title">A Growing Community</h5>
-				<p>Bonfire has an ever-growing <a href="http://forums.cibonfire.com">community</a> of users that are there to help you get unstuck, or make the best use of this powerful system.</p>
-				<p>Bugs and feature discussion also happen on GitHub's <a href="https://github.com/ci-bonfire/Bonfire/issues?direction=desc&labels=0.7&sort=created&state=open">issue tracker</a>. This is the best place to report bugs and discuss new features.</p>
-			</div>
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">A Growing Community</h5>
+			<p>Bonfire has an ever-growing <a href="http://forums.cibonfire.com">community</a> of users that are there to help you get unstuck, or make the best use of this powerful system.</p>
+			<p>Bugs and feature discussion also happen on GitHub's <a href="https://github.com/ci-bonfire/Bonfire/issues?direction=desc&labels=0.7&sort=created&state=open">issue tracker</a>. This is the best place to report bugs and discuss new features.</p>
 		</div>
 	</div>
-	<div class="col mb-4">
-		<div class="card">
-			<div class="card-body card-padding">
-				<h5 class="card-title">Built-in Flexibility</h5>
-				<p>A <a href="https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc">modular system</a> that allows code re-use, and overriding core modules with custom modules.</p>
-				<p>A <i>template system</i> that allows parent-child themes, and overriding controller views in the template.</p>
-				<p><i>Role-Based Access Control</i> that provides as much fine-grained control as your modules need.</p>
-			</div>
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">Built-in Flexibility</h5>
+			<p>A <a href="https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc">modular system</a> that allows code re-use, and overriding core modules with custom modules.</p>
+			<p>A <i>template system</i> that allows parent-child themes, and overriding controller views in the template.</p>
+			<p><i>Role-Based Access Control</i> that provides as much fine-grained control as your modules need.</p>
 		</div>
 	</div>
 </div>

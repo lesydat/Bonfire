@@ -25,9 +25,7 @@ $fieldData['showLabel'] = true;
 
 ?>
 <div class="card">
-	<div class="card-header">
-		<h5><?php echo lang('us_edit_profile'); ?></h5>
-	</div>
+	<h5 class="card-header"><?php echo lang('us_edit_profile'); ?></h5>
 	<div class="card-body">
 		<p class="card-text"><?php echo lang('bf_required_note'); ?></p>
 		<?php echo form_open($this->uri->uri_string(), array('autocomplete' => 'off')); ?>
@@ -39,7 +37,7 @@ $fieldData['showLabel'] = true;
 			<!-- Start User Meta -->
 			<?php $this->load->view('users/user_meta', array('frontend_only' => true, 'showLabel' => true)); ?>
 			<!-- End of User Meta -->
-			<input type="submit" name="save" class="btn btn-primary" value="<?php echo lang('bf_action_save'); ?>" />
+			<button type="submit" name="save" class="btn btn-primary"><i class="fas fa-save"></i> <?php echo lang('bf_action_save'); ?></button>
 			<!-- <?php echo lang('bf_or') . ' ' . anchor('/', lang('bf_action_cancel')); ?> -->
 		<?php echo form_close(); ?>
 	</div>
